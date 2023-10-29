@@ -1,0 +1,24 @@
+{
+    "name": "websuckit/websuckit-php",
+    "description": "Websuckit PHP library",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Websuckit\\WebsuckitPhp\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": { "Websuckit\\WebsuckitPhp\\Tests\\": "tests" }
+    },
+    "authors": [
+        {"name": "Wisdom Praise", "email": "wisdompraise968@gmail.com"}
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "composer-runtime-api": "^2",
+        "psr/cache": "^1|^2|^3",
+        "psr/log": "^1|^2|^3"
+    }
+}
