@@ -30,8 +30,9 @@ trait Base
             $channelName = $path->channelName;
             $channelPassKey = $path->channelPassKey;
             $replaySelf = $path->replaySelf;
+            $replaySelfBool = $replaySelf ? 'true' : 'false';
 
-            $replay = isset($replaySelf) ? "&replay_self={$replaySelf}" : "";
+            $replay = isset($replaySelf) ? "&replay_self={$replaySelfBool}" : "";
             $encodedToken = "user_id={$userId}&channel={$channelName}&channel_pass_key={$channelPassKey}{$replay}";
             $forgePublicKey = PublicKeyLoader::loadPublicKey($publicKey);
 
