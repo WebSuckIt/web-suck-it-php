@@ -2,7 +2,7 @@
 
 namespace Websuckit\WebsuckitPhp\Types;
 
-class ConnectToChannelReq
+class ChannelConnectionUrlConfig
 {
     public string $channelName;
     public string $channelPassKey;

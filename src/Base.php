@@ -5,7 +5,7 @@ namespace Websuckit\WebsuckitPhp;
 
 use Websuckit\WebsuckitPhp\Types\GenerateChannelPath;
 use phpseclib3\Crypt\PublicKeyLoader;
-use Websuckit\WebsuckitPhp\Types\ConnectToChannelReq;
+use Websuckit\WebsuckitPhp\Types\ChannelConnectionUrlConfig;
 
 
 trait Base
@@ -49,10 +49,10 @@ trait Base
     }
 
     /**
-     * @param ConnectToChannelReq $req
+     * @param ChannelConnectionUrlConfig $req
      * @return \Exception|string
      */
-    public function getConnectionUrl(ConnectToChannelReq $req) {
+    public function getConnectionUrl(ChannelConnectionUrlConfig $req) {
         $path = new GenerateChannelPath($this->publicKey, $req->channelName, $req->channelPassKey, $this->userId, $req->replaySelf);
         return $this->generateChannelPath($path);
     }
