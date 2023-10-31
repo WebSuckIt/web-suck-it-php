@@ -6,7 +6,8 @@
     "autoload": {
         "psr-4": {
             "Websuckit\\WebsuckitPhp\\": "src"
-        }
+        },
+        "exclude-from-classmap": ["tests/", "example/"]
     },
     "autoload-dev": {
         "psr-4": { "Websuckit\\WebsuckitPhp\\Tests\\": "tests" }
@@ -17,9 +18,6 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=8.0",
-        "composer-runtime-api": "^2",
-        "psr/cache": "^1|^2|^3",
-        "psr/log": "^1|^2|^3",
         "phpseclib/phpseclib": "^3.0",
         "ext-curl": "*"
     }

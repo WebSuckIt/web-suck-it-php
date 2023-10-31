@@ -1,0 +1,13 @@
+{
+    "name": "ws/demo",
+    "description": "",
+    "require": {
+        "websuckit/websuckit-php": "@dev"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": ".."
+        }
+    ]
+}
