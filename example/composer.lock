@@ -239,11 +239,11 @@
             "dist": {
                 "type": "path",
                 "url": "..",
-                "reference": "75617d544f0649114d90d84c5a35c759b7642fa7"
+                "reference": "33ffb0467b182751ad2f523fcd461318aff09a32"
             },
             "require": {
                 "ext-curl": "*",
-                "php": ">=8.0",
+                "php": ">=7.4",
                 "phpseclib/phpseclib": "^3.0"
             },
             "type": "library",
