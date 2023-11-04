@@ -61,7 +61,7 @@ trait Base
      * @param string $endpoint
      * @param string $httpMethod
      * @param string|null $data
-     * @return bool|string|void
+     * @return array
      */
     protected function request(string $endpoint, string $httpMethod = 'GET', string|null $data = null)
     {
@@ -101,12 +101,26 @@ trait Base
         if ($response === false) {
             $error = curl_error($curl);
             // Handle the error or log it as needed
-            die("cURL error: $error");
+            return [
+                "message"=>$error,
+                "status"=>500
+            ];
         }
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
         // Close cURL session
         curl_close($curl);
 
-        return $response;
+        $res = json_decode($response, true);
+        if($httpcode == 200){
+            return [
+              "data"=>$res,
+              "status"=>$httpcode
+            ];
+        }
+
+        $res["status"] = $httpcode;
+
+        return $res;
     }
 }

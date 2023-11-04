@@ -9,46 +9,53 @@ trait Channel
     private string $resourceName = "channel";
 
     /**
-     * @param array<string, string> $data
-     * @return bool|string|null
+     * @param string $channel
+     * @return array
      */
-    public function createChannel(array $data): bool|string|null
+    public function createChannel(string $channel): array
     {
-        return $this->request("/{$this->resourceName}/create", "POST", json_encode($data));
+        return $this->request("/{$this->resourceName}/create", "POST", json_encode([
+            "channel"=>$channel
+        ]));
     }
 
     /**
-     * @param array<string, string> $data
-     * @return bool|string|null
+     * @param string $channelId
+     * @param string $channel
+     * @param bool $regeneratePassKey
+     * @return array
      */
-    public function updateChannel(array $data): bool|string|null
+    public function updateChannel(string $channelId, string $channel, bool $regeneratePassKey): array
     {
-        return $this->request("/{$this->resourceName}/update", "PUT", json_encode($data));
+        return $this->request("/{$this->resourceName}/{$channelId}/update", "PUT", json_encode([
+            "channel"=>$channel,
+            "regenerate_pass_key"=>$regeneratePassKey
+        ]));
     }
 
     /**
      * @param string $channelName
-     * @return bool|string|null
+     * @return array
      */
-    public function getChannel(string $channelName): bool|string|null
+    public function getChannel(string $channelName): array
     {
         return $this->request("/{$this->resourceName}/{$channelName}/details");
     }
 
     /**
      * @param string $channelName
-     * @return bool|string|null
+     * @return array
      */
-    public function getOrCreateChannel(string $channelName): bool|string|null
+    public function getOrCreateChannel(string $channelName): array
     {
         return $this->request("/{$this->resourceName}/{$channelName}/get-or-create");
     }
 
     /**
      * @param array<string, string> $queryParams
-     * @return bool|string|null
+     * @return array
      */
-    public function getChannels(array $queryParams): bool|string|null
+    public function getChannels(array $queryParams): array
     {
         $queryString = http_build_query($queryParams);
         return $this->request("/{$this->resourceName}/lists?{$queryString}");
@@ -56,9 +63,9 @@ trait Channel
 
     /**
      * @param string $channelId
-     * @return bool|string|null
+     * @return array
      */
-    public function deleteChannel(string $channelId): bool|string|null
+    public function deleteChannel(string $channelId): array
     {
         return $this->request("/{$this->resourceName}/{$channelId}/delete", "DELETE");
     }
