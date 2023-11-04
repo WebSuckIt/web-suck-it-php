@@ -24,8 +24,8 @@ class Config
         $this->userId = $userId;
         $this->accessKey = $accessKey;
         $this->publicKey = $publicKey;
-//        $this->baseUrl = $baseUrl ?? "https://backend.websuckit.com/api";
-        $this->baseUrl = $baseUrl ?? "http://127.0.0.1:9999/api";
+        $this->baseUrl = $baseUrl ?? "https://backend.websuckit.com/api";
+//        $this->baseUrl = $baseUrl ?? "http://127.0.0.1:9999/api";
         $this->wssBaseUrl = $wssBaseUrl ?? "wss://backend.websuckit.com";
     }
 }
