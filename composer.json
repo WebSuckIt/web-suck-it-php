@@ -19,7 +19,6 @@
     "require": {
         "php": ">=8.0",
         "phpseclib/phpseclib": "^3.0",
-        "ext-curl": "*",
-        "vlucas/phpdotenv": "^5.5"
+        "ext-curl": "*"
     }
 }

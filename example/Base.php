@@ -1,6 +1,6 @@
 <?php
 require_once 'vendor/autoload.php';
-require_once '../loadenv.php';
+require_once 'loadenv.php';
 
 
 use Websuckit\WebsuckitPhp\Config;
