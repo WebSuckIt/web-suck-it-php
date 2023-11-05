@@ -10,27 +10,37 @@ trait Channel
 
     /**
      * @param string $channel
+     * @param int|null $max_connections
      * @return array
      */
-    public function createChannel(string $channel): array
+    public function createChannel(string $channel, ?int $max_connections = null): array
     {
-        return $this->request("/{$this->resourceName}/create", "POST", json_encode([
+        $body = [
             "channel"=>$channel
-        ]));
+        ];
+        if(!is_null($max_connections)){
+            $body['max_connections']=$max_connections;
+        }
+        return $this->request("/{$this->resourceName}/create", "POST", json_encode($body));
     }
 
     /**
      * @param string $channelId
      * @param string $channel
      * @param bool $regeneratePassKey
+     * @param int|null $max_connections
      * @return array
      */
-    public function updateChannel(string $channelId, string $channel, bool $regeneratePassKey): array
+    public function updateChannel(string $channelId, string $channel, bool $regeneratePassKey, ?int $max_connections = null): array
     {
-        return $this->request("/{$this->resourceName}/{$channelId}/update", "PUT", json_encode([
+        $body = [
             "channel"=>$channel,
-            "regenerate_pass_key"=>$regeneratePassKey
-        ]));
+            "regenerate_pass_key"=>$regeneratePassKey,
+        ];
+        if(!is_null($max_connections)){
+            $body['max_connections']=$max_connections;
+        }
+        return $this->request("/{$this->resourceName}/{$channelId}/update", "PUT", json_encode($body));
     }
 
     /**

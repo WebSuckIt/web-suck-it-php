@@ -35,7 +35,7 @@ $res = $websuckit->getOrCreateChannel($_ENV['CHANNEL_NAME']);
 $websuckit->getChannel($_ENV['CHANNEL_NAME']);
 
 if(isset($res['data']['channel']['id'])){
-    $websuckit->updateChannel($res['data']['channel']['id'], "another-new", false);
+    $websuckit->updateChannel($res['data']['channel']['id'], "another-new", false, 4);
     $websuckit->updateChannel($res['data']['channel']['id'], $_ENV['CHANNEL_NAME'], false);
 }
 
