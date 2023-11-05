@@ -31,3 +31,10 @@ jobs:
       - name: Run SDK test
         working-directory: ./example
         run: php Base.php
+        env:
+          ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
+          CHANNEL_NAME: ${{ secrets.CHANNEL_NAME }}
+          CHANNEL_PASSKEY: ${{ secrets.CHANNEL_PASSKEY }}
+          PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
+          USER_ID: ${{ secrets.USER_ID }}
+
