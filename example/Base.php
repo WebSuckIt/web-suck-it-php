@@ -33,10 +33,13 @@ $channel = new ChannelConnectionUrlConfig($_ENV['CHANNEL_NAME'], $_ENV['CHANNEL_
 $websuckit->getConnectionUrl($channel);
 $res = $websuckit->getOrCreateChannel($_ENV['CHANNEL_NAME']);
 $websuckit->getChannel($_ENV['CHANNEL_NAME']);
-$websuckit->updateChannel($_ENV['TEST_CHANNEL_ID'], "another-new", false);
-$websuckit->updateChannel($_ENV['TEST_CHANNEL_ID'], $_ENV['CHANNEL_NAME'], false);
-$chan = $websuckit->createChannel(generateRandomSlugWithHyphens(2, 8));
 
+if(isset($res['data']['channel']['id'])){
+    $websuckit->updateChannel($res['data']['channel']['id'], "another-new", false);
+    $websuckit->updateChannel($res['data']['channel']['id'], $_ENV['CHANNEL_NAME'], false);
+}
+
+$chan = $websuckit->createChannel(generateRandomSlugWithHyphens(2, 8));
 if(isset($chan['data']['channel']['id'])){
     echo "\n";
     echo json_encode($websuckit->deleteChannel($chan['data']['channel']['id']));
