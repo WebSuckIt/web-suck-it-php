@@ -1,8 +1,7 @@
 <?php
 require_once 'vendor/autoload.php';
+require_once '../loadenv.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable(getcwd());
-$dotenv->load();
 
 use Websuckit\WebsuckitPhp\Config;
 use Websuckit\WebsuckitPhp\Websuckit;
