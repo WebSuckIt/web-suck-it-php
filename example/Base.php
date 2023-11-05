@@ -7,12 +7,6 @@ use Websuckit\WebsuckitPhp\Config;
 use Websuckit\WebsuckitPhp\Websuckit;
 use \Websuckit\WebsuckitPhp\Types\ChannelConnectionUrlConfig;
 
-$user_id = $_ENV['USER_ID'];
-$access_key = $_ENV['ACCESS_KEY'];
-$public_key = $_ENV['PUBLIC_KEY'];
-$channel_pass_key = $_ENV['CHANNEL_PASSKEY'];
-$channel_name = $_ENV['CHANNEL_NAME'];
-
 function generateRandomSlugWithHyphens($numWords = 2, $wordLength = 6) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
     $slug = '';
