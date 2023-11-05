@@ -34,9 +34,9 @@ $websuckit->getConnectionUrl($channel);
 $res = $websuckit->getOrCreateChannel($_ENV['CHANNEL_NAME']);
 $websuckit->getChannel($_ENV['CHANNEL_NAME']);
 
-if(isset($res['data']['channel']['id'])){
-    $websuckit->updateChannel($res['data']['channel']['id'], "another-new", false, 4);
-    $websuckit->updateChannel($res['data']['channel']['id'], $_ENV['CHANNEL_NAME'], false);
+if(isset($res['data']['id'])){
+    $websuckit->updateChannel($res['data']['id'], "another-new", false, 2);
+    $websuckit->updateChannel($res['data']['id'], $_ENV['CHANNEL_NAME'], false, 20);
 }
 
 $chan = $websuckit->createChannel(generateRandomSlugWithHyphens(2, 8));
