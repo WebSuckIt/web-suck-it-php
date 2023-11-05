@@ -30,7 +30,7 @@ jobs:
 
       - name: Run SDK test
         working-directory: ./example
-        run: php Base.php
+        run: php -c custom-config.php Base.php
         env:
           ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
           CHANNEL_NAME: ${{ secrets.CHANNEL_NAME }}
