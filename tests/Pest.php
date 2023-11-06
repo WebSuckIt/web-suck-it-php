@@ -66,6 +66,9 @@ function initializeWebsuckitWithValidConfig(): Websuckit
     $user_id = getenv('USER_ID');
     $access_key = getenv("ACCESS_KEY");
     $public_key = getenv("PUBLIC_KEY");
+    echo $user_id;
+    echo $access_key;
+    echo $public_key;
     expect($user_id)->not->toBeNull();
     expect($access_key)->not->toBeNull();
     expect($public_key)->not->toBeNull();

@@ -5,7 +5,6 @@ it('should create a channel with valid config', function () {
     $result = $websuckit->createChannel('test-channel', 5);
 
     expect($result)->toBeArray();
-    echo json_encode($result);
     expect($result)->toHaveKeys(['status', 'data']);
     expect($result['status'])->toBe(200);
     expect($result['data'])->toBeArray();
