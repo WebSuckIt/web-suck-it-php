@@ -35,7 +35,7 @@ it('should update a channel with valid config', function () {
 
 it('should get channel with valid config', function () {
     $websuckit = initializeWebsuckitWithValidConfig();
-    $result = $websuckit->getChannel(getenv('CHANNEL_NAME'));
+    $result = $websuckit->getChannel('test-channel-update');
 
     expect($result)->toBeArray();
     expect($result)->toHaveKeys(['status', 'data']);
