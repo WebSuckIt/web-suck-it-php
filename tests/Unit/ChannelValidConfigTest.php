@@ -24,7 +24,7 @@ it('should get or create channel with valid config', function () {
 it('should update a channel with valid config', function () {
     $websuckit = initializeWebsuckitWithValidConfig();
     $channel = $websuckit->getOrCreateChannel(getenv('CHANNEL_NAME'));
-    $result = $websuckit->updateChannel($channel['data']['id'], 'test-channel', false, 10);
+    $result = $websuckit->updateChannel($channel['data']['id'], 'test-channel-update', false, 10);
 
     expect($result)->toBeArray();
     echo json_encode($result);
@@ -45,7 +45,7 @@ it('should get channel with valid config', function () {
 
 it('should delete channel with valid config', function () {
     $websuckit = initializeWebsuckitWithValidConfig();
-    $channel = $websuckit->getOrCreateChannel(getenv('CHANNEL_NAME'));
+    $channel = $websuckit->getOrCreateChannel('test-channel-update');
     $result = $websuckit->deleteChannel($channel['data']['id']);
 
     expect($result)->toBeArray();
@@ -57,7 +57,6 @@ it('should delete channel with valid config', function () {
 it('should get channels list with invalid config', function () {
     $websuckit = initializeWebsuckitWithValidConfig();
     $result = $websuckit->getChannels("0", "10");
-    echo json_encode($result);
 
     expect($result)->toBeArray();
     expect($result)->toHaveKeys(['status', 'data']);

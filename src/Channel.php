@@ -76,7 +76,6 @@ trait Channel
             $queryParams['search_key']=$search_key;
         }
         $queryString = http_build_query($queryParams);
-        echo $queryString;
         return $this->request("/{$this->resourceName}/list?{$queryString}");
     }
 
