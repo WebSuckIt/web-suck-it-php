@@ -65,8 +65,16 @@ trait Channel
      * @param array<string, string> $queryParams
      * @return array
      */
-    public function getChannels(array $queryParams): array
+    public function getChannels(string $page, string $per_page, ?string $search_key = null): array
     {
+        $queryParams = [
+            "page"=>$page,
+            "per_page"=>$per_page,
+        ];
+
+        if(!is_null($search_key)){
+            $queryParams['search_key']=$search_key;
+        }
         $queryString = http_build_query($queryParams);
         return $this->request("/{$this->resourceName}/lists?{$queryString}");
     }

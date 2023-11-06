@@ -28,13 +28,20 @@ jobs:
         working-directory: ./example
         run: composer install
 
-      - name: Run SDK test
+      - name: Run SDK example
         working-directory: ./example
         run: php -c custom-config.php Base.php
         env:
           ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
           CHANNEL_NAME: ${{ secrets.CHANNEL_NAME }}
           CHANNEL_PASSKEY: ${{ secrets.CHANNEL_PASSKEY }}
+          PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
+          USER_ID: ${{ secrets.USER_ID }}
+
+      - name: Run SDK test
+        run: ./vendor/bin/pest
+        env:
+          ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
           PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
           USER_ID: ${{ secrets.USER_ID }}
 
