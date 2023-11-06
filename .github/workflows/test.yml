@@ -39,6 +39,7 @@ jobs:
           USER_ID: ${{ secrets.USER_ID }}
 
       - name: Run SDK test
+        working-directory: .
         run: ./vendor/bin/pest
         env:
           ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
