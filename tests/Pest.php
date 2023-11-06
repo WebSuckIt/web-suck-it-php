@@ -70,9 +70,6 @@ function initializeWebsuckitWithValidConfig(): Websuckit
     expect($access_key)->not->toBeNull();
     expect($public_key)->not->toBeNull();
     $config = new Config($user_id, $access_key, $public_key);
-    echo $config->publicKey;
-    echo $config->accessKey;
-    echo $config->userId;
     $websuckit = new Websuckit($config);
     expect($config->baseUrl)->toBe(BASEURL);
     expect($config->wssBaseUrl)->toBe(WSS_BASEURL);
