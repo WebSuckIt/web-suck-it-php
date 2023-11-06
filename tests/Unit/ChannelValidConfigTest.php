@@ -2,7 +2,7 @@
 
 it('should create a channel with valid config', function () {
     $websuckit = initializeWebsuckitWithValidConfig();
-    $result = $websuckit->createChannel('test-channel', 5);
+    $result = $websuckit->createChannel(getenv('CHANNEL_NAME'), 5);
 
     expect($result)->toBeArray();
     expect($result)->toHaveKeys(['status', 'data']);
@@ -12,7 +12,7 @@ it('should create a channel with valid config', function () {
 
 it('should get or create channel with valid config', function () {
     $websuckit = initializeWebsuckitWithValidConfig();
-    $result = $websuckit->getOrCreateChannel('test-channel');
+    $result = $websuckit->getOrCreateChannel(getenv('CHANNEL_NAME'));
 
     expect($result)->toBeArray();
     expect($result)->toHaveKeys(['status', 'data']);
@@ -22,7 +22,7 @@ it('should get or create channel with valid config', function () {
 
 it('should update a channel with valid config', function () {
     $websuckit = initializeWebsuckitWithValidConfig();
-    $channel = $websuckit->getOrCreateChannel('test-channel');
+    $channel = $websuckit->getOrCreateChannel(getenv('CHANNEL_NAME'));
     $result = $websuckit->updateChannel($channel['data']['id'], 'test-channel', false, 22);
 
     expect($result)->toBeArray();
@@ -33,7 +33,7 @@ it('should update a channel with valid config', function () {
 
 it('should get channel with valid config', function () {
     $websuckit = initializeWebsuckitWithValidConfig();
-    $result = $websuckit->getChannel('test-channel');
+    $result = $websuckit->getChannel(getenv('CHANNEL_NAME'));
 
     expect($result)->toBeArray();
     expect($result)->toHaveKeys(['status', 'data']);
@@ -43,7 +43,7 @@ it('should get channel with valid config', function () {
 
 it('should delete channel with valid config', function () {
     $websuckit = initializeWebsuckitWithValidConfig();
-    $channel = $websuckit->getOrCreateChannel('test-channel');
+    $channel = $websuckit->getOrCreateChannel(getenv('CHANNEL_NAME'));
     $result = $websuckit->deleteChannel($channel['data']['id']);
 
     expect($result)->toBeArray();

@@ -32,6 +32,7 @@ $websuckit = new Websuckit($config);
 $channel = new ChannelConnectionUrlConfig($_ENV['CHANNEL_NAME'], $_ENV['CHANNEL_PASSKEY'], true);
 $websuckit->getConnectionUrl($channel);
 $res = $websuckit->getOrCreateChannel($_ENV['CHANNEL_NAME']);
+echo json_encode($res);
 $websuckit->getChannel($_ENV['CHANNEL_NAME']);
 
 if(isset($res['data']['id'])){

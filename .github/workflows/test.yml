@@ -48,4 +48,5 @@ jobs:
           ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
           PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
           USER_ID: ${{ secrets.USER_ID }}
+          CHANNEL_NAME: ${{ secrets.CHANNEL_NAME }}
 
