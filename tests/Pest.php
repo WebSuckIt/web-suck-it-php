@@ -66,13 +66,13 @@ function initializeWebsuckitWithValidConfig(): Websuckit
     $user_id = getenv('USER_ID');
     $access_key = getenv("ACCESS_KEY");
     $public_key = getenv("PUBLIC_KEY");
-    echo $user_id;
-    echo $access_key;
-    echo $public_key;
     expect($user_id)->not->toBeNull();
     expect($access_key)->not->toBeNull();
     expect($public_key)->not->toBeNull();
     $config = new Config($user_id, $access_key, $public_key);
+    echo $config->publicKey;
+    echo $config->accessKey;
+    echo $config->userId;
     $websuckit = new Websuckit($config);
     expect($config->baseUrl)->toBe(BASEURL);
     expect($config->wssBaseUrl)->toBe(WSS_BASEURL);
