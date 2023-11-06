@@ -24,7 +24,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
 
-      - name: Install Composer dependencies
+      - name: Install Example Composer dependencies
         working-directory: ./example
         run: composer install
 
@@ -38,7 +38,7 @@ jobs:
           PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
           USER_ID: ${{ secrets.USER_ID }}
 
-      - name: Install Composer Dependencies
+      - name: Install Library Composer Dependencies
         run: composer install
 
       - name: Run SDK test
