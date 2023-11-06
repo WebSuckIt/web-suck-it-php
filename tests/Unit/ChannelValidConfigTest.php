@@ -27,7 +27,6 @@ it('should update a channel with valid config', function () {
     $result = $websuckit->updateChannel($channel['data']['id'], 'test-channel-update', false, 10);
 
     expect($result)->toBeArray();
-    echo json_encode($result);
     expect($result)->toHaveKeys(['status', 'data']);
     expect($result['status'])->toBe(200);
     expect($result['data'])->toBeArray();
