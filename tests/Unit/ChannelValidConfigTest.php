@@ -24,7 +24,7 @@ it('should get or create channel with valid config', function () {
 it('should update a channel with valid config', function () {
     $websuckit = initializeWebsuckitWithValidConfig();
     $channel = $websuckit->getOrCreateChannel(getenv('CHANNEL_NAME'));
-    $result = $websuckit->updateChannel($channel['data']['id'], 'test-channel', false, 22);
+    $result = $websuckit->updateChannel($channel['data']['id'], 'test-channel', false, 10);
 
     expect($result)->toBeArray();
     echo json_encode($result);
