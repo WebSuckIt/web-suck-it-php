@@ -38,6 +38,9 @@ jobs:
           PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
           USER_ID: ${{ secrets.USER_ID }}
 
+      - name: Install Composer Dependencies
+        run: composer install
+
       - name: Run SDK test
         working-directory: .
         run: ./vendor/bin/pest
