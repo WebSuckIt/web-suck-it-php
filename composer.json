@@ -1,6 +1,7 @@
 {
     "name": "websuckit/websuckit-php",
     "description": "Websuckit PHP library",
+    "homepage": "https://github.com/WebSuckIt/web-suck-it-php",
     "type": "library",
     "license": "MIT",
     "keywords": ["websocket", "communication", "http", "websuckit", "realtime"],
@@ -14,7 +15,12 @@
         "psr-4": { "Websuckit\\WebsuckitPhp\\Tests\\": "tests" }
     },
     "authors": [
-        {"name": "Wisdom Praise", "email": "wisdompraise968@gmail.com"}
+        {
+            "name": "Wisdom Praise",
+            "email": "wisdompraise968@gmail.com",
+            "homepage": "https://github.com/wizzywit",
+            "role": "Developer"
+        }
     ],
     "minimum-stability": "stable",
     "require": {
