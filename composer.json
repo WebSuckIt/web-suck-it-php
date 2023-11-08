@@ -4,7 +4,7 @@
     "homepage": "https://github.com/WebSuckIt/web-suck-it-php",
     "type": "library",
     "license": "MIT",
-    "keywords": ["websocket", "communication", "http", "websuckit", "realtime"],
+    "keywords": ["websocket", "communication", "http", "websuckit", "realtime", "wss"],
     "autoload": {
         "psr-4": {
             "Websuckit\\WebsuckitPhp\\": "src"
