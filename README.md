@@ -78,7 +78,7 @@ $channel = $websuckit->getChannel('CHANNEL-NAME');
 $page = "0";
 $per_page = "10";
 
-//search varaible that can be null
+//search variable that can be null
 $search = "search-term"
 $channels = $websuckit->getChannels($page, $per_page, $search);
 ```
