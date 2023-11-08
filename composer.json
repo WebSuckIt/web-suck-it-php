@@ -3,6 +3,7 @@
     "description": "Websuckit PHP library",
     "type": "library",
     "license": "MIT",
+    "keywords": ["websocket", "communication", "http", "websuckit", "realtime"],
     "autoload": {
         "psr-4": {
             "Websuckit\\WebsuckitPhp\\": "src"
